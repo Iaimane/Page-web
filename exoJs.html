@@ -368,8 +368,6 @@ function factorielle(number){
         console.log(resultat);
         }
 
-        // a voir pour comptabiliser : ici incrementer comparer && comptabiliser si choixUser vous remportez cette manche alors ++
-
         let scoreFinal;{
         if (scoreOrdi == scoreUser){
             scoreFinal = "Fin de la partie : Egalité !";
@@ -379,7 +377,6 @@ function factorielle(number){
             scoreFinal = "Fin de la partie : VOus avez gagné !";
         }
         console.log(`${scoreFinal} Votre score ${scoreUser}, score de l'ordi ${scoreOrdi}`)
-     
     }
     }
     jouer()
@@ -403,7 +400,7 @@ function factorielle(number){
 // CALENDRIER
 let jours = [ 'lun', '007', 'mer', 'jeu', 'ven', 'sam', 'BUG' ];  
 
-// retirer dernier élément d'un tableau
+// retirer le dernier élément d'un tableau (avec possibilité de l'afficher avec un console.log) pour retirer la première c'est shift
 jours.pop ();
 
 // afficher les valeurs du tableau dans console
