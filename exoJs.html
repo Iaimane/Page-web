@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <p>Exercices JS</p>
+    <img src="IMAGE/Arbre chat-bot.jpg" alt="">
     <!--<script>
         let monTab = [1,2];
         monTab == monTab;
@@ -36,7 +36,7 @@
         console.log(resultat);
 
         alert('bonjour');
-    </script>-->
+    </script>
 
     <script>
         let monMessage = 'Hello !';
@@ -47,9 +47,8 @@
         a = 4;
         console.log(typeof (a) == 'number')
 
-    </script>
-<!----------------------------CHATBOT------------------------->
- <!----------EXERCICE 1---------->
+    </script>-->
+<!----------------------------CHATBOT SIMPLE------------------------->
    <!-- <script> 
         let invite = prompt('Write something'); /*inviter l'utilisateur à écrire quelque chose*/
         if(invite == 'Hello'){
@@ -61,8 +60,11 @@
         }
     </script>-->
     
- <!----------EXERCICE 2---------->
-    <script>
+
+
+
+ <!----------EXERCICE 2 -- LES VARIABLES ---------->
+    <!--<script>
         let speak = prompt('Tell me "hello"');
         if (speak == 'hello') {
             speak = prompt('hello, how are you?');
@@ -71,23 +73,430 @@
         } else {
             alert("Sorry, I have to go");
         }
-    </script>
+    </script>-->
 
-  <!----------EXERCICE 3---------->  
+<!---------- FIN EXERCICE 2-- LES VARIABLES-------->
 
 
+
+
+
+  <!----------EXERCICE 4 lLES CONDITIONS -- CHAT BOT---------->  
+<!--<script>
+//        let options = {
+//        "NOUVEAUTES pour connaitre nos dernières nouveautés\n":function(){
+
+//        },
+//        "INFOS pour consulter les infos produits\n":function(){
+
+//        }, 
+//        "OFFRES pour connaitre nos offres actuelles\n":function(){
+
+//        },
+//        "SUIVI pour suivre votre commande\n":function(){
+
+//        },
+//        "CLIENT pour le service client\n":function(){
+
+//      },
+//      };
+
+    let user = prompt ("Bonjour, en quoi puis-je vous aider?\n Merci d'écrire un des mots-clés suivants : \n NOUVEAUTES pour connaitre nos dernières nouveautés \n INFOS pour consulter les infos produits \n OFFRES pour connaitre nos offres actuelles \n SUIVI pour suivre votre commande \n CLIENT pour le service client \n C'est à vous ! ");
+
+    if (user === 'NOUVEAUTES'){
+        user = prompt ("Souhaitez-vous voir nos dernières nouveautés?\n Oui\n Non");
+    if (user === 'Oui') {
+        alert ("Très bien je vous redirige sur la page !");
+    } else 
+        alert('Dans ce cas, je vous propose de voir nos meilleurs ventes...');  
+    }    
+          
+        
+    if (user == 'INFOS'){
+        user = prompt ("Consulter la fiche technique: \n Oui \n Non");
+        if (user == "Oui") {
+            alert ("Très bien je vous redirige sur la page !");
+        } else 
+            alert('Dans ce cas, je vous propose de voir les avis clients...');
+    }
+
+
+    if (user == 'OFFRES'){
+        user = prompt ("Souhaitez-vous recevoir nos offres actuelles? \n Oui \n Non");
+        if (user == "Oui") {
+            prompt ("Laissez moi votre adresse mail !");
+        } else
+            alert('Très bien, je vous propose de voir nos meilleures offres actuelles en ligne...');   
+    }
+
+    if (user == 'SUIVI'){
+        user = prompt ("Tapez 1 si vous souhaitez savoir où est votre commande \n Tapez 2 si vous souhaitez connaitre la date de livraison estimée.");
+        if (user === "1" ) {
+            alert (" Vous trouverez le lien de suivi dans le mail de confirmation de commande ou via votre espace client, rubrique mes commandes.");
+        } else 
+            alert("Nos délais de livraison sont de 2 à 3 jours ouvrés après l'expédition de votre commande.");    
+    }
+
+
+    if (user == 'CLIENT'){
+        user = prompt ("Tapez 1 si vous souhaitez savoir comment effectuer un retour \n Tapez 2 si vous souhaitez être contacté par un de nos conseillers.");
+        if (user == "1") {
+            alert (" Vous pouvez effectuer un retour via votre espace client, rubrique Retour. Suivez les étapes indiquées.");
+        } else 
+            alert("Très bien ! Laissez moi votre numéro de téléphone, un de nos conseillers vous contactera dans les prochaines 24 heures.\n Merci"); 
+    }
+
+
+    else (user == '');{
+        user = prompt ("Veuillez entrer un mot valide : \n NOUVEAUTES pour connaitre nos dernières nouveautés \n INFOS pour consulter les infos produits \n OFFRES pour connaitre nos offres actuelles \n SUIVI pour suivre votre commande \n CLIENT pour le service client \n C'est à vous !");
+    }
+   
+
+    
+</script>-->
 <!--------------------------END CHATBOT------------------------->
 
 
-    <script>
-        for (
-            let nbr = 1; nbr <= 100; nbr++) {
-            console.log(nbr)
+<!------------------------Le juste prix-------------------------------->
+    <!--<script>
+        function findTheGoodNumber()
+
+    {let secretNumber = Math.floor(Math.random() * 101); //obtenir un nombre aléatoire entier entre 0 et 100 (on note 101 car on part de 0)
+    console.log(secretNumber);
+        for (let i = 0; i < 10; i++ ){
+            let user = prompt ("Entrez un nombre entre 0 et 100 (attention 10 tentatives):");
+            if (user < secretNumber){
+                alert("Plus grand !");
+            } else if (user > secretNumber){
+                alert("Plus petit !");
+            } else if (user == secretNumber){
+                alert ("Vous avez gagné en " + i + " fois !");break;
+            } else if (user == "Quitter"){
+                break;
+            } else{
+                alert("Erreur, veuillez réessayer.");
+            } 
+            if(i === 10){
+            alert("Perdu, vous avez épuisé toutes vos chances ! Le nombre secret était " + secretNumber + ".");
+            }
         }
-    </script>
+    }
+
+    findTheGoodNumber();
+    
+   // regler le probleme du || dans la boucle for pour que le jeu s'arrete si plus de 10 tentatives ou secretNumber trouvé
+
+        // utiliser prompt et alert 
+        // utiliser le math.round(math.random() * 100) pour obtenir un nombre aléatoire 
+        //entier entre 0 et 100
+        // voir comment laisser seulement 10 tentatives au joueur 
+        // si nbr saisi inférieur afficher Plus petit si supérieur afficher Plus grand et si bon nbr afficher Bravo
+        // chercher def de parseInt et return (le return c'est dans les fonctions)
+        // essayer d'integrer une fonction (revoir la lecon sur les fonctions page 16)
+        
+
+    </script>-->
+
+<!------------------------Le juste prix-------------------------------->
+
+
+<!------------------------Le juste prix VERSION JEREMIE-------------------------------->
+   <!-- <script>
+        function guessingGame() {
+            // Initialiser le nombre aléatoire
+            let secretNumber = Math.floor(Math.random() * 101);
+            /console.log('Le nombre secret est :', secretNumber); affiche le resultat dans la console/
+
+            // Permettre au joueur de tenter de deviner le nombre
+            for (let i = 0; i < 10; i++) {
+                let guess = parseInt(prompt("Entrez un nombre entre 0 et 100:"));
+                  // Vérifier si le joueur a réussi à deviner le bon nombre
+                  if (guess === secretNumber) {
+                    alert("Bravo ! Vous avez deviné le bon nombre !");
+                    return;
+                }
+
+                // Informer le joueur s'il doit saisir un nombre plus grand ou plus petit
+                else if (guess < secretNumber) {
+                    alert("Plus grand");
+                } else {
+                    alert("Plus petit");
+                }
+            }
+
+            // Si le joueur a épuisé toutes ses tentatives, afficher le nombre secret
+            alert("Dommage, vous avez épuisé toutes vos tentatives ! Le nombre secret était " + secretNumber + ".");
+        }
+        guessingGame();
+        </script>
+-->
+
+<!------------------------Le juste prix VERSION JEREMIE-------------------------------->
+
+<!----------------------END EXERCICE 4 lLES CONDITIONS -- CHAT BOT------------------------>  
 
 
 
+
+
+<!--------------------------EXERCICE 3 -- LES BOUCLES ------------------------->
+
+    <!--<script>
+        for (let nbr = 1; nbr <= 100; nbr++) {
+            if (nbr % 3 === 0 &&  nbr % 5 === 0){
+            console.log ('FizzBuzz');
+            } else if (nbr % 3 === 0){
+            console.log('Fizz');
+            } else if (nbr % 5 === 0){
+            console.log ('Buzz');
+            } else {
+            console.log (nbr);
+            }
+    }
+    </script>-->
+
+<!--------------------------FIN EXERCICE 3 -- LES BOUCLES --------------------->    
+
+
+
+
+
+
+<!-------------------------EXERCICE 5-- LES FONCTIONS---------------------------->
+
+<!--------------fonction diviser par 2--------------->
+<!--<script>
+function diviserParDeux(nbr) {
+    return nbr/2
+    
+} //ma fonction est définie
+
+let n = (Math.floor (Math.random()*200)); //je défini n nombre aléatoire
+console.log ("valeur de n :", n, "valeur de n divisé par 2:", diviserParDeux(n)) //je demande d'afficher n et n divisé par 2
+
+c=diviserParDeux(5); // si je tape c dans console j'aurai 2,5
+</script>-->
+<!--------------fonction diviser par 2--------------->
+
+
+<!--------------fonction somme--------------->
+<!--<script>
+function somme(x,y){
+    return x + y;
+}
+console.log ("valeur de n:", n, "valeur de n + n:",somme(n,n))
+// si on tape somme (4,6) dans la console on aura 10
+</script>-->
+<!--------------fonction somme--------------->
+
+
+<!--------------fonction somme random--------------->
+<!--<script>
+function signe(e){
+    if (e < 0){
+     return "négatif";   
+    } else if (e > 0){
+        return "positif";
+    }else{
+        return "nul";
+    }
+}
+
+// dans console taper :
+// signe (10)
+//'positif'
+//signe(-30)
+//'négatif'
+//signe (0)
+//'nul'
+</script>-->
+<!--------------fonction somme random--------------->
+
+
+
+<!--------------fonction factorielle--------------->
+<!--<script>
+
+function factorielle(number){
+    let f = 1;
+    for ( let monNombre = 2; monNombre <= number; monNombre++) {
+    f = f * monNombre ;
+    }
+    return f;
+}   
+
+</script>-->
+<!--------------fonction factorielle--------------->
+
+<!-----------------------END EXERCICE 5-- LES FONCTIONS-------------------------->
+
+
+
+
+
+<!-----------------------EXERCICE 6-- CHI FOU MI-------------------------->
+<script>
+
+    function comparer( choixOrdi, choixUser){ // choix 1 = ordi // choix 2 = utilisateur
+        if(choixOrdi === choixUser ){
+            return "Egalité";
+        }
+        switch (choixOrdi) {
+            case "pierre" :
+                return choixUser === "ciseaux" ? "l'ordi remporte la manche" : "vous remportez cette manche" //si choix 1 = pierre, et que ordi ciseaux ordi gagne sinon joueur gagne ? signifie si oui et les : signifie sinon (ternaire)
+            case "feuille" :
+                return choixUser === "pierre" ? "l'ordi remporte la manche" : "vous remportez cette manche"
+            case "ciseaux" :
+                return choixUser === "feuille" ? "l'ordi remporte la manche" : "vous remportez cette manche"
+            default :
+                throw new Error("Merci d'écrire pierre, feuille ou ciseaux !");   
+        } 
+    }
+    
+    function jouer(){
+        
+    let scoreOrdi = 0;
+    let scoreUser = 0;
+    for (let partie = 0; partie < 3; partie++){
+        
+        let choixOrdi = Math.random() < 0.33 ? "pierre":
+            Math.random() < 0.5 ? "feuille" : "ciseaux"
+        let choixUser = prompt ("Choisissez parmi pierre, feuille ou ciseaux :").toLowerCase();
+        // console.log(`Joueur a choisi ${choixUser}`);
+        console.log(`L'ordi a choisi ${choixOrdi}`);
+        let resultat = comparer (choixOrdi, choixUser);
+        console.log(resultat);
+        }
+
+        // a voir pour comptabiliser : ici incrementer comparer && comptabiliser si choixUser vous remportez cette manche alors ++
+
+        let scoreFinal;{
+        if (scoreOrdi == scoreUser){
+            scoreFinal = "Fin de la partie : Egalité !";
+        } else if (scoreOrdi > scoreUser){
+            scoreFinal = "Fin de la partie : vous avez perdu !";
+        } else {
+            scoreFinal = "Fin de la partie : VOus avez gagné !";
+        }
+        console.log(`${scoreFinal} Votre score ${scoreUser}, score de l'ordi ${scoreOrdi}`)
+     
+    }
+    }
+    jouer()
+
+    
+// probleme quand je valide sans rien mettre ou que j'écris n'importe quoi : je gagne 
+// pourtant j'ai mis le default throw new error
+
+// probleme de score final egalité et score 0 0
+// le score n'est pas comptabilisé
+
+</script>
+<!---------------------END EXERCICE 6-- CHI FOU MI------------------------>
+
+
+
+
+<!-----------------------EXERCICE 7-------------------------->
+<script>
+
+// CALENDRIER
+let jours = [ 'lun', '007', 'mer', 'jeu', 'ven', 'sam', 'BUG' ];  
+
+// retirer dernier élément d'un tableau
+jours.pop ();
+
+// afficher les valeurs du tableau dans console
+console.log (jours);
+
+// ajouter une valeur à la fin du tableau
+jours.push ("dim");
+
+// remplacer une valeur par une autre (index et nouvelle valeur)
+jours[1] = ("mar");
+
+// afficher nombre de valeurs du tableau dans console
+console.log (jours.length);
+
+// afficher 3ème valeur du tableau
+console.log (jours[2]);
+
+// valeur finale après toutes ces opérations
+console.log (jours);
+
+
+
+
+
+
+// EPICERIE
+let fruits = [ 'Mangue ', 'Raisin ', 'Figue ', 'Kiwi ' ];
+alert (`Fruits disponibles:`` ${fruits}`);
+// if (fruits === )
+
+prompt ("Quel fruit souhaitez-vous acheter ?")
+
+
+
+// Écrire un programme qui:
+// 1.	Affiche la liste de fruits disponibles;
+// 2.	Demande au client quel fruit il désire acheter: 
+// o	s’il est présent dans le tableau fruits: le retirer du tableau, et afficher 'ok!',
+// o	sinon, afficher 'indisponible...'.
+// 3.	Affiche à nouveau la liste de fruits disponibles.
+
+
+
+
+
+// // PENDU
+// let mauvaisesLettres = [ ]; // sera complété pendant le jeu
+// let lettresAttendues = [ 's', 'u', 'p', 'e', 'r' ];
+
+</script>
+
+<!---------------------END EXERCICE 7------------------------>
+
+
+<!----------------Notes grafikart--------------->
+<!--
+<script>
+    a = "les gens"
+    b = "salut"
+
+    // pour afficher Salut les gens, dans la console deux possibilités `${b} ${a}` ou a + '' + b 
+
+    const notes =[
+        13,
+        14,
+        10,
+        8,
+        'Hello',
+        [1,2,3]
+    ]
+    // pour afficher un index (case du tableau), on part de 0 donc la valeur de l'index 5 on écrit : notes [5] [2] ca nous affiche 3
+
+    
+    // Ci-dessous type objet qui permettent de conserver des donnees plus complexes
+    // que les tableaux avec des clés ou propriétés (la par ex firstname,age,...), ici exemple d'infos sur une personne
+    const person = {
+        firstName: "John" , 
+        lastName: "Doe",
+        age: 24 ,
+        notes: [12,15,18], //tableau
+        job: { //on peut aussi avoir un objet qui contient un objet
+            title: "Web Developer",
+            hours: 35
+        }
+   
+    }
+    //dans la console si on note person.firstName on aura John 
+    //si on veux acceder à la première note du tableau il faudra noter person.notes[1], on aura 15 puisque index 1 (il faut commencer à 0 donc 2ème position)
+   // propriété imbriquée person.job.title on aura web Developer
+   // on peut modifier la valeur ex: person.job.title = 'informaticien' ou changer la valeur d'une note ex: 
+</script>
+-->
+<!----------------Notes grafikart--------------->
 
 
 </body>
